@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &369547891863102243
+--- !u!1 &1566617268177007771
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7161804511686171138}
-  - component: {fileID: 3446445917853672751}
-  - component: {fileID: 2515102349152908822}
+  - component: {fileID: 2512024974184342337}
+  - component: {fileID: 7322804138751490452}
+  - component: {fileID: 4367233846477931570}
   m_Layer: 8
   m_Name: Carrot
   m_TagString: Untagged
@@ -18,36 +18,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7161804511686171138
+--- !u!4 &2512024974184342337
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369547891863102243}
+  m_GameObject: {fileID: 1566617268177007771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 896136228175036479}
+  m_Father: {fileID: 7346106374891197482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3446445917853672751
+--- !u!33 &7322804138751490452
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369547891863102243}
+  m_GameObject: {fileID: 1566617268177007771}
   m_Mesh: {fileID: 4970989848755135003, guid: 539003eed0bf20a4faf58b92584a662b, type: 3}
---- !u!23 &2515102349152908822
+--- !u!23 &4367233846477931570
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369547891863102243}
+  m_GameObject: {fileID: 1566617268177007771}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,6 +62,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: df7fe48a4062d5448bff2a0f1470487e, type: 2}
+  - {fileID: 2100000, guid: 287b43d0c4c6cdc49b792889e05f8363, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &2801728340437184847
+--- !u!1 &6400104441055322005
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,41 +92,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 896136228175036479}
-  - component: {fileID: 7284939503235851588}
-  - component: {fileID: 8480881143441008710}
-  - component: {fileID: 5675969026847011864}
-  - component: {fileID: -7035474798337325716}
+  - component: {fileID: 7346106374891197482}
+  - component: {fileID: 5256654663335096620}
+  - component: {fileID: 5411135031030646249}
+  - component: {fileID: 9222540884126082704}
+  - component: {fileID: 2809569665078505410}
   m_Layer: 8
-  m_Name: Item_Carrot
+  m_Name: Item_Carrot_Inv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &896136228175036479
+--- !u!4 &7346106374891197482
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801728340437184847}
+  m_GameObject: {fileID: 6400104441055322005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.207, y: 0.6062424, z: 20.776108}
+  m_LocalPosition: {x: -8.113998, y: 0.6062424, z: 4.162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7161804511686171138}
+  - {fileID: 2512024974184342337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7284939503235851588
+--- !u!65 &5256654663335096620
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801728340437184847}
+  m_GameObject: {fileID: 6400104441055322005}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -140,13 +141,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.45, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8480881143441008710
+--- !u!54 &5411135031030646249
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801728340437184847}
+  m_GameObject: {fileID: 6400104441055322005}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -167,31 +168,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5675969026847011864
+--- !u!114 &9222540884126082704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801728340437184847}
+  m_GameObject: {fileID: 6400104441055322005}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba3ca86c63caee642b1347c99f52fcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 674d2db5d6dd6e842bc3ed6dc6b9dcbb, type: 2}
---- !u!114 &-7035474798337325716
+--- !u!114 &2809569665078505410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2801728340437184847}
+  m_GameObject: {fileID: 6400104441055322005}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0be834a5539d2c4b92aea7d1a9c2904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healVal: 0
-  invTime: 10
+  controller: {fileID: 0}
   condition: {fileID: 0}
+  speedUpVal: 0
+  maxTime: 0

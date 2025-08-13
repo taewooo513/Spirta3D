@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -35,6 +36,12 @@ public class PlayerController : MonoBehaviour
     public Action inventory;
     public bool isFlying = false;
 
+    [Header("InterObject")]
+    public GameObject interObject;
+    public TextMeshProUGUI objectNameText;
+    public TextMeshProUGUI objectDescText;
+
+    iInteraction nowInteraction;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -56,6 +63,37 @@ public class PlayerController : MonoBehaviour
     {
         IsPlatform();
         HangingOnTheWall();
+        Vector3 dir = Camera.main.transform.position - pointTransform.position;
+        Ray interactionRay = new Ray(Camera.main.transform.position, -dir.normalized);
+
+        if (Physics.Raycast(interactionRay, out var hitInfo, interactionRange))
+        {
+            if (hitInfo.transform.TryGetComponent(out iInteraction interaction))
+            {
+                nowInteraction = interaction;
+            }
+            else
+            {
+                nowInteraction = null;
+            }
+        }
+        else
+        {
+            nowInteraction = null;
+        }
+
+        if (nowInteraction != null)
+        {
+            interObject.SetActive(true);
+            objectNameText.text = nowInteraction.GetName();
+            objectDescText.text = nowInteraction.GetDesc();
+        }
+        else
+        {
+            interObject.SetActive(false);
+            objectNameText.text = String.Empty;
+            objectDescText.text = String.Empty;
+        }
     }
     private void FixedUpdate()
     {
@@ -229,5 +267,18 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         isFlying = false;
+    }
+
+    public void SpeedUp()
+    {
+        StartCoroutine("SpeedUpBuff");
+    }
+    IEnumerator SpeedUpBuff()
+    {
+        moveSpeed += 3;
+        runSpeed += 3;
+        yield return new WaitForSeconds(10);
+        moveSpeed -= 3;
+        runSpeed -= 3;
     }
 }

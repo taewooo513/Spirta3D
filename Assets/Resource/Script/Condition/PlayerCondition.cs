@@ -14,7 +14,7 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     Condition stamina { get { return uiCondition.stamina; } }
     public float noHungerHealthDecay;
     public event Action onTakeDamage;
-
+    public bool isInv = false;
     void Update()
     {
         hunger.Subtract(hunger.passiveValue * Time.deltaTime);
@@ -60,8 +60,11 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     }
     public void TakePhysicalDamage(int damage)
     {
-        health.Subtract(damage);
-        onTakeDamage?.Invoke();
+        if (isInv == false)
+        {
+            health.Subtract(damage);
+            onTakeDamage?.Invoke();
+        }
     }
 
     public bool UseStamina(float amount)
@@ -73,5 +76,17 @@ public class PlayerCondition : MonoBehaviour, IDamagable
 
         stamina.Subtract(amount);
         return true;
+    }
+    public void Invincibility()
+    {
+        StartCoroutine("PlayerInv");
+    }
+
+
+    IEnumerator PlayerInv()
+    {
+        isInv = true;
+        yield return new WaitForSeconds(10);
+        isInv = false;
     }
 }

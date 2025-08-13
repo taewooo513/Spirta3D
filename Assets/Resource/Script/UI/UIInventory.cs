@@ -188,6 +188,7 @@ public class UIInventory : MonoBehaviour
     {
         if (selectedItem.type == ItemType.Consumable)
         {
+
             for (int i = 0; i < selectedItem.consumables.Length; i++)
             {
                 switch (selectedItem.consumables[i].type)
@@ -200,6 +201,7 @@ public class UIInventory : MonoBehaviour
                         break;
                 }
             }
+            ActionItem();
             RemoveSelectedItem();
         }
     }
@@ -209,7 +211,13 @@ public class UIInventory : MonoBehaviour
         RemoveSelectedItem();
 
     }
-
+    void ActionItem()
+    {
+        for (int j = 0; j < selectedItem.action.Length; j++)
+        {
+            selectedItem.action[j].Invoke();
+        }
+    }
     void RemoveSelectedItem()
     {
         slots[selectedItemIndex].quantity--;
@@ -229,9 +237,13 @@ public class UIInventory : MonoBehaviour
         if (slots[curEquipIndex].equipped)
         {
             UnEquip(curEquipIndex);
+            controller.moveSpeed -= slots[curEquipIndex].item.stat;
+            controller.runSpeed -= slots[curEquipIndex].item.stat;
         }
         slots[selectedItemIndex].equipped = true;
         curEquipIndex = selectedItemIndex;
+        controller.moveSpeed += slots[curEquipIndex].item.stat;
+        controller.runSpeed += slots[curEquipIndex].item.stat;
         CharacterManager.Instance.player.equip.EquipNew(selectedItem);
         UpdateUI();
         SelectItem(selectedItemIndex);
