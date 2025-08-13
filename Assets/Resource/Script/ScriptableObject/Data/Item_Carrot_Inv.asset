@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c39ab0545d3c804aa5a514e6571bff7, type: 3}
+  m_Name: Item_Carrot_Inv
+  m_EditorClassIdentifier: 
+  displayName: "\uBB34\uC801 \uB2F9\uADFC"
+  description: "\uBB34\uC801\uC774\uB418\uACE0 \uCCB4\uB825\uACFC \uBC30\uACE0\uD514\uC744
+    \uD68C\uBCF5\uD569\uB2C8\uB2E4"
+  type: 1
+  iCon: {fileID: 21300000, guid: b53822ec75d701e49b9947d1d09fd81e, type: 3}
+  dropPrefab: {fileID: 2801728340437184847, guid: baa4b9bffb9ca074cabee0a06ad819d9, type: 3}
+  isStack: 1
+  maxStackAmount: 12
+  consumables:
+  - type: 0
+    value: 10
+  - type: 1
+    value: 10
+  equipPrefab: {fileID: 0}
+  stat: 0
+  action:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2809569665078505410, guid: 341ea16a3847c6941926a420ec2b1b20, type: 3}
+        m_TargetAssemblyTypeName: ItemBuff, Assembly-CSharp
+        m_MethodName: Invincibility
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
